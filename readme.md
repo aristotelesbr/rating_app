@@ -1,6 +1,6 @@
 # Rating App
 
-[![Test](https://github.com/aristotelesbr/rating_app/actions/workflows/test.yaml/badge.svg)](https://github.com/aristotelesbr/rating_app/actions/workflows/test.yaml)
+[![Test](https://github.com/aristotelesbr/rating_app/actions/workflows/test.yaml/badge.svg?branch=main)](https://github.com/aristotelesbr/rating_app/actions/workflows/test.yaml)
 
 ## Description
 
