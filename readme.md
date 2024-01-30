@@ -6,8 +6,13 @@ This is a simple rating app that allows users to rate teachers or any thing else
 
 ## Features
 
-- Users can rate teachers
-- Users can view the number of ratings of a teacher
+### Users can rate teachers
+
+![rate a teacher](https://raw.githubusercontent.com/aristotelesbr/rating_app/main/docs/images/rate_a_teacher.png)
+
+### Users can view the number of ratings of a teacher
+
+![View rating](https://raw.githubusercontent.com/aristotelesbr/rating_app/main/docs/images/view_ratings.png)
 
 ## Technologies
 
