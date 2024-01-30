@@ -5,10 +5,14 @@ on: [push, pull_request]
 permissions:
   contents: read
 
+env:
+  CONSOLE_OUTPUT: XTerm
+
 jobs:
   test:
-    name: Ruby ${{matrix.ruby}} on Ubuntu
-    runs-on: ubuntu-latest
+    name: ${{matrix.ruby}} on ${{matrix.os}}
+    runs-on: ${{matrix.os}}-latest
+    continue-on-error: ${{matrix.experimental}}
 
     strategy:
       matrix:
@@ -31,11 +35,9 @@ jobs:
           experimental: true
         - os: ubuntu
           ruby: head
-          experimental: true
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
