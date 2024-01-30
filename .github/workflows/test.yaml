@@ -52,7 +52,7 @@ jobs:
       - name: Setup database
         run: |
           chmod +x db/setup.rb
-          RACK_ENV='test' ./db/setup.rb
+          RACK_ENV='test' bundle exec ruby db/setup.rb
 
       - name: Run tests
         timeout-minutes: 10
