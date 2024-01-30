@@ -45,6 +45,9 @@ jobs:
           ruby-version: ${{matrix.ruby}}
           bundler-cache: true
 
+      - name: Install dependencies
+        run: bundle install
+    
       - name: Setup database
         run: RACK_ENV='test' ruby db/setup.rb
 
