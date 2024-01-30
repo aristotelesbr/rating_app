@@ -45,6 +45,9 @@ jobs:
           ruby-version: ${{matrix.ruby}}
           bundler-cache: true
 
+      - name: Setup database
+        run: RACK_ENV='test' ruby db/setup.rb
+
       - name: Run tests
         timeout-minutes: 10
         run: bundle exec rspec
