@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Avaliações dos Professores</title>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+	<div class="container">
+		<h1>
+			<%= @title %>
+		</h1>
+		<table class="ratings-table">
+			<thead>
+				<tr>
+					<th>Professor</th>
+					<th>😠</th>
+					<th>😕</th>
+					<th>😐</th>
+					<th>😊</th>
+					<th>😍</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @teacher_ratings.each do |teacher| %>
+					<tr>
+						<td>
+							<%= teacher.name %>
+						</td>
+						<td>
+							<%= teacher.rating1 %>
+						</td>
+						<td>
+							<%= teacher.rating2 %>
+						</td>
+						<td>
+							<%= teacher.rating3 %>
+						</td>
+						<td>
+							<%= teacher.rating4 %>
+						</td>
+						<td>
+							<%= teacher.rating5 %>
+						</td>
+					</tr>
+					<% end %>
+			</tbody>
+		</table>
+		<div class="mt-10">
+			<a href="/" class="button">🖨️</a>
+		</div>
+	</div>
+</body>
+
+</html>

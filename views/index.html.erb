@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Avaliação de Professores</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<script src="/js/scripts.js"></script>
+</head>
+
+<body>
+	<div id="thank-you-modal" class="modal" style="display: none">
+		<div class="modal-content">
+			<span class="close-button">&times;</span>
+			<p>🥳 Obrigado por responder à nossa pesquisa!</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<h1>
+			<%= @title %>
+		</h1>
+
+		<form action="/ratings" method="post">
+			<% @teachers.each_with_index do |teacher, index| %>
+				<div class="teacher-rating" id="teacher-rating-<%= teacher.id %>">
+					<div>
+						<span>
+							<%= teacher.name %>
+						</span>
+					</div>
+					<div>
+						<input type="hidden" name="ratings[<%= index %>][teacher_id]" value="<%= teacher.id %>"
+							class="emoji-input" />
+						<% (1..5).each do |rating| %>
+							<label class="emoji-label">
+								<input type="radio" name="ratings[<%= index %>][rating]" value="<%= rating %>" class="emoji-input" />
+								<%= "😠😕😐😊😍" [rating-1] %>
+							</label>
+							<% end %>
+					</div>
+				</div>
+				<% end %>
+					<button class="button" type="submit">👉 Enviar Avaliação</button>
+		</form>
+	</div>
+</body>
+
+</html>
