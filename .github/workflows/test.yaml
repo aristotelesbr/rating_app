@@ -26,15 +26,15 @@ jobs:
 
         experimental: [false]
 
-      include:
-        - os: ubuntu
-          ruby: truffleruby
-          experimental: true
-        - os: ubuntu
-          ruby: jruby
-          experimental: true
-        - os: ubuntu
-          ruby: head
+        include:
+          - os: ubuntu
+            ruby: truffleruby
+            experimental: true
+          - os: ubuntu
+            ruby: jruby
+            experimental: true
+          - os: ubuntu
+            ruby: head
 
     steps:
       - uses: actions/checkout@v4
