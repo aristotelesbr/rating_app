@@ -40,19 +40,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{matrix.ruby}}
           bundler-cache: true
 
-      - name: Update Bundler
-        run: gem install bundler
-
       - name: Install dependencies
         run: bundle install
-    
+
       - name: Setup database
-        run: RACK_ENV='test' ruby db/setup.rb
+        run: |
+          chmod +x db/setup.rb
+          RACK_ENV='test' ./db/setup.rb
 
       - name: Run tests
         timeout-minutes: 10
