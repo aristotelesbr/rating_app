@@ -5,7 +5,7 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,10 +13,16 @@ body {
   font-weight: 400;
   display: flex;
   justify-content: center;
-  /* min-height: 100vh; */
   margin: 0;
   padding: 20px;
   background-color: #fdfdcf;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    display: grid;
+    padding: 10px;
+  }
 }
 
 h1,
@@ -32,9 +38,16 @@ h6 {
 
 article {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 90%;
   width: 100%;
   padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  article {
+    padding: 10px;
+    margin: 0 auto;
+  }
 }
 
 article h1 {
@@ -43,10 +56,22 @@ article h1 {
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 600px) {
+  article h1 {
+    font-size: 1.4rem;
+  }
+}
+
 article h2 {
   font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  article h2 {
+    font-size: 1rem;
+  }
 }
 
 p {
@@ -55,6 +80,12 @@ p {
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    font-size: 1rem;
+  }
 }
 
 ul {
@@ -80,6 +111,11 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .center {
   text-align: center;
 }
@@ -90,6 +126,16 @@ a {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 100%;
-  max-width: 900px;
+  max-width: 60%;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 4px;
+  }
 }
