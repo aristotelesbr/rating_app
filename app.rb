@@ -78,7 +78,9 @@ class RattingApp
 
   # DATABASE CONNECTION
   #
-  def database = @database ||= SQLite3::Database.new('db/teachers.db')
+  def database
+    @database ||= SQLite3::Database.new ENV['RACK_ENV'] == 'test' ? 'db/teachers_test.db' : 'db/teachers.db'
+  end
 
   # SQL QUERIES
   #

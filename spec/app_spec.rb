@@ -5,6 +5,17 @@ require 'sqlite3'
 ::RSpec.describe('RatingApp') do
   describe 'requests' do
     context 'GET /' do
+      before do
+        @database = SQLite3::Database.new('db/teachers_test.db')
+        @database.execute('INSERT INTO teachers (name) VALUES ("Sócrates"), ("Aristóteles"), ("Epicteto"), ("João")')
+      end
+
+      after do
+        @database.execute('DELETE FROM ratings')
+
+        @database.close
+      end
+
       it 'returns 200' do
         get '/'
         expect(last_response).to be_ok

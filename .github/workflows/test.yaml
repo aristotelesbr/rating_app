@@ -32,5 +32,5 @@ jobs:
         run: RACK_ENV='test' bundle exec ruby db/setup.rb
 
       - name: Run tests
-        run: bundle exec rspec
+        run: RACK_ENV='test' bundle exec rspec
 
