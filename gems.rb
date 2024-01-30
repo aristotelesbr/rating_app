@@ -6,9 +6,8 @@ gem 'rack'
 gem 'rackup'
 gem 'sqlite3'
 
-gem 'debug'
-
 group :development, :test do
-  gem 'rspec', '~> 3.12'
   gem 'rack-test'
+  gem 'rspec', '~> 3.12'
 end
+
