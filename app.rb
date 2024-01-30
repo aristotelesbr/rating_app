@@ -94,7 +94,6 @@ class RattingApp
     true
   rescue SQLite3::SQLException => e
     puts "ERROR: #{e.message}"
-    db.rollback
 
     database.rollback
   end
