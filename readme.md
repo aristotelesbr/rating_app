@@ -1,5 +1,7 @@
 # Rating App
 
+[![Test](https://github.com/aristotelesbr/rating_app/actions/workflows/test.yaml/badge.svg)](https://github.com/aristotelesbr/rating_app/actions/workflows/test.yaml)
+
 ## Description
 
 This is a simple rating app that allows users to rate teachers or any thing else.
