@@ -2,4 +2,4 @@ require './app'
 
 use Rack::Static, root: 'public', urls: ['/css', '/js']
 
-run RattingApp.new
+run App.new

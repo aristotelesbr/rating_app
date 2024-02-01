@@ -5,7 +5,7 @@ require 'json'
 
 # Rack application
 #
-class RattingApp
+class App
   # Rack interface
   #
   def call(env)
