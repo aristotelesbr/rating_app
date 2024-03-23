@@ -1,7 +1,6 @@
 require 'rack'
 require 'sqlite3'
 require 'erb'
-require 'json'
 
 # Rack application
 #
