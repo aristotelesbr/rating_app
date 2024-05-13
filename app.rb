@@ -16,7 +16,7 @@ class App
 
     case [method, path]
     in ['GET', '/']          then index
-    in ['POST', '/ratings']  then create_rating
+    in ['POST', '/ratings']  then create
     in ['GET', '/relatorio'] then report
     in ['GET', '/thank_you'] then thank_you
     else not_found
@@ -32,7 +32,7 @@ class App
     render(:index)
   end
 
-  def create_rating
+  def create
     if insert_in_batch!(rating_params)
       redirect_to('/thank_you')
     else
